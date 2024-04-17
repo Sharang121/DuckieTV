@@ -22,7 +22,7 @@ https://github.com/DuckieTV/Nightlies/releases/latest
 
 DuckieTV For Chrome, Safari, Opera, Vivaldi or Edge browsers is no longer supported.
 ---------------------------
-**Starting with Chromium 124 Web SQL (The database that Dtv uses) is no longer supported.**
+**Starting with Chromium 124 Web SQL (The database that Dtv uses) is no longer available.**
 
 Screenshots:
 ============
