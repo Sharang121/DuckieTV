@@ -12,16 +12,15 @@ As of v0.60, DuckieTV is finally becoming a worthy SickBeard competitor by intro
 How can I get it?
 =================
 
-DuckieTV can be installed as either a standalone application on Windows (7, 8.1, 10, 11), Linux (Debian based such as Ubuntu 15.10 and newer), and Mac OSX (10.15 and newer), or installed as a Google Chrome Browser Extension (in development mode).
+DuckieTV can be installed as an application on Windows (7, 8.1, 10, 11), Linux (Debian based such as Ubuntu 15.10 and newer), and Mac OSX (10.15 and newer).
 
-Install DuckieTV Standalone
+Install DuckieTV
 -------------------------------------------
-As of v0.81, DuckieTV is available as a standalone build.
 Get the latest release here:
 
 https://github.com/DuckieTV/Nightlies/releases/latest
 
-DuckieTV For Chrome, Safari, Opera, Vivaldi or Edge.
+DuckieTV For Chrome, Safari, Opera, Vivaldi or Edge browsers is no longer supported.
 ---------------------------
 **Starting with Chromium 124 Web SQL (The database that Dtv uses) is no longer supported.**
 
