@@ -1,4 +1,4 @@
-DuckieTV as a Standalone Binary, and as an extension for Chromium based Browsers
+DuckieTV as a Standalone Binary
 ==============================================
 
 DuckieTV is an application that takes care of TV-Show addicts by providing a personalized TV-Show calendar. DuckieTV ensures the information is always up to date and provides an integrated blocking resistant torrent search so that the download can be as easy as possible.
@@ -21,7 +21,7 @@ Get the latest release here:
 
 https://github.com/DuckieTV/Nightlies/releases/latest
 
-Install DuckieTV For Chrome, Safari, Opera, Vivaldi or Edge.
+DuckieTV For Chrome, Safari, Opera, Vivaldi or Edge.
 ---------------------------
 **Starting with Chromium 124 Web SQL (The database that Dtv uses) is no longer supported.**
 
