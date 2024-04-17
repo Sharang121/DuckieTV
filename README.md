@@ -23,23 +23,7 @@ https://github.com/DuckieTV/Nightlies/releases/latest
 
 Install DuckieTV For Chrome, Safari, Opera, Vivaldi or Edge.
 ---------------------------
-DuckieTV for Chrome comes in 2 versions: One that installs itself as your browser's "new tab" page, and one that just provides an easily accessible button to open DuckieTV.
-
-~~[DuckieTV 'New Tab mode': Installs itself as your new tab page]~~
-
-~~[DuckieTV 'Browser Action mode': Adds a button next to your address bar]~~
-
-Due to changes to the Google Chrome Web Store security rules (Dec 2019), Dtv is no longer being accepted as an extension app.
-
-Currently the only way to run Dtv as a Chrome extension, is to manually install it under the development mode extensions page.
-
-**Starting with Chromium 119 Web SQL (The database that Dtv uses) is no longer supported.**
-You can re-enable the WebSQL support by using this override flag:
-`chrome://flags/#web-sql-access` then clicking enable and relaunch.
-
-I do not know for how long this bypass will be available, so expect it to vanish by version 123.
-
-See [Installing DuckieTV Nightly Chrome Browser Extensions](https://github.com/SchizoDuckie/DuckieTV/wiki/How-to-Install-a-Development-version-of-the-DuckieTV-Chrome-Browser-Extension-NIGHTLY) for details.
+**Starting with Chromium 124 Web SQL (The database that Dtv uses) is no longer supported.**
 
 Screenshots:
 ============
