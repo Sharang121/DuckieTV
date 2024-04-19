@@ -15,8 +15,7 @@ if (localStorage.getItem('CRUD.DEBUG')) {
  * for other environments, run in the foreground
  */
 if (('chrome' in window) && ('runtime' in chrome) && ('connect' in chrome.runtime) && ('getBackgroundPage' in chrome.runtime)) {
-  var conn = new CRUD.BackgroundPageAdapter()
-  conn.Init()
+  var conn = new CRUD.WorkerBackgroundPageAdapter()
   CRUD.setAdapter(conn)
 } else {
   CRUD.setAdapter(new CRUD.SQLiteAdapter('seriesguide_chrome', {
