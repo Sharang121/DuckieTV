@@ -19,7 +19,7 @@ DuckieTV.run(['$rootScope', 'SettingsService', function ($rootScope, SettingsSer
     win.resizeTo(parseInt(pos.width), parseInt(pos.height))
     win.moveTo(parseInt(pos.x), parseInt(pos.y))
 
-    console.debug('window state: state=%s,h=%i,w=%i,x=%i,y=%i',pos.state,pos.height,pos.width,pos.x,pos.y);
+    console.debug('window state: state=%s,h=%i,w=%i,x=%i,y=%i', pos.state, pos.height, pos.width, pos.x, pos.y);
 
     if (pos.state == 'maximized') {
       setTimeout(function () {
@@ -49,19 +49,12 @@ DuckieTV.run(['$rootScope', 'SettingsService', function ($rootScope, SettingsSer
 
     // and handle their events.
     document.getElementById('close').addEventListener('click', function () {
-      localStorage.setItem('standalone.position', JSON.stringify({
-        width: window.outerWidth,
-        height: window.outerHeight,
-        x: window.screenX,
-        y: window.screenY,
-        state: winState
-
-      }))
-
+      saveWindowState()
       win.close() // we call window.close so that the close event can fire
     })
 
     document.getElementById('minimize').addEventListener('click', function () {
+      saveWindowState()
       win.minimize()
     })
 
@@ -84,5 +77,38 @@ DuckieTV.run(['$rootScope', 'SettingsService', function ($rootScope, SettingsSer
       winState = 'normal'
       $rootScope.$emit('winstate', winState)
     })
+
+    // Save window state on resize and move with a 500ms debounce as the events fire continously while resizing or moving
+    var windowMoveTimeout = false
+    win.on('resize', function () {
+      if (windowMoveTimeout !== false) {
+        clearTimeout(windowMoveTimeout)
+      }
+
+      windowMoveTimeout = setTimeout(function () {
+        saveWindowState()
+      }, 500)
+    })
+
+    win.on('move', function () {
+      if (windowMoveTimeout !== false) {
+        clearTimeout(windowMoveTimeout)
+      }
+
+      windowMoveTimeout = setTimeout(function () {
+        saveWindowState()
+      }, 500)
+    })
+
+    function saveWindowState() {
+      console.debug('saving window state: state=%s,h=%i,w=%i,x=%i,y=%i', winState, window.outerHeight, window.outerWidth, window.screenX, window.screenY)
+      localStorage.setItem('standalone.position', JSON.stringify({
+        width: window.outerWidth,
+        height: window.outerHeight,
+        x: window.screenX,
+        y: window.screenY,
+        state: winState
+      }))
+    }
   })
 }])
